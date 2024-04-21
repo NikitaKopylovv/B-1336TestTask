@@ -44,7 +44,7 @@ const BrigadeList: React.FC = () => {
 
     const getItemSize = (index: number) => {
         const totalRows = Math.ceil(filteredBrigades.length / itemsPerRow);
-        return index < totalRows ? 270 : 0;
+        return index < totalRows ? 280 : 0;
     };
 
     // Функция фильтрации бригад
