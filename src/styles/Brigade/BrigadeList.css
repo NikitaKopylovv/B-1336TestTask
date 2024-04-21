@@ -1,9 +1,9 @@
 .row-brigade-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
     gap: 15px;
     padding: 5px;
-    grid-auto-rows: minmax(150px, auto);
+    grid-auto-rows: minmax(200px, auto);
     margin-left: 10px;
 }
 
@@ -20,4 +20,13 @@
 
 .row-brigade-list {
     margin-left: 10px;
+    min-width: min-content;
+}
+
+.filter-select-department {
+    width: 150px;
+}
+
+.filter-select-connection {
+    width: 150px;
 }
