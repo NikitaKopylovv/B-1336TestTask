@@ -1,0 +1,23 @@
+.row-brigade-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 15px;
+    padding: 5px;
+    grid-auto-rows: minmax(150px, auto);
+    margin-left: 10px;
+}
+
+.brigade-card {
+    margin: 10px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.filter-flex-container {
+    margin: 5px;
+    height: 30px;
+}
+
+.row-brigade-list {
+    margin-left: 10px;
+}

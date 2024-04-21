@@ -1,25 +1,55 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import './App.css';
+import BrigadeList from './Components/Brigade/BrigadeList';
+import HighChart from './Components/HighChart/HighChart';
+import { Menu } from 'antd';
+import './styles/Menu.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <NavigationMenu />
+        <Routes>
+          <Route path="/" element={<Navigate to="/brigades" replace />} />
+          <Route path="/brigades" element={<BrigadeList />} />
+          <Route path="/highChart" element={<HighChart />} />
+        </Routes>
+      </BrowserRouter>
     </div>
+  );
+}
+
+
+function NavigationMenu() {
+  const navigate = useNavigate(); // Hook для программной навигации
+
+  const handleClick = (e: { key: string; }) => {
+    const key = e.key;
+    if (key === 'brigades') {
+      navigate('/brigades');
+    } else if (key === 'highChart') {
+      navigate('/highChart');
+    }
+  };
+
+  return (
+    <Menu
+      className='menu-navigation'
+      mode="horizontal"
+      onClick={handleClick}
+      items={[
+        {
+          label: 'Бригады',
+          key: 'brigades'
+        },
+        {
+          label: 'График',
+          key: 'highChart'
+        }
+      ]}
+    />
   );
 }
 
