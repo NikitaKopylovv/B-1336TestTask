@@ -123,7 +123,7 @@ const BrigadeList: React.FC = () => {
             />
             <VariableSizeList
                 className='brigade-list'
-                height={window.innerHeight - 100} //100px это высота фильтров с отступами
+                height={window.innerHeight - 105} //105px это высота фильтров с навигацией
                 itemCount={Math.ceil(filteredBrigades.length / itemsPerRow)}
                 itemSize={getItemSize}
                 width={window.innerWidth}
